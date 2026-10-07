@@ -84,7 +84,10 @@ struct QuestionsCard: View {
                         }
                     }
                 }
+                // As tall as the options up to the cap, so the chat above gives way instead of
+                // squeezing the list to a row and a half.
                 .frame(maxHeight: 300)
+                .fixedSize(horizontal: false, vertical: true)
                 .scrollBounceBehavior(.basedOnSize)
                 if question.allowsOther {
                     otherField(for: question)
@@ -214,6 +217,7 @@ private struct ApprovalCard: View {
                 if let plan = approval.tool.body, !plan.isEmpty {
                     ScrollView { MarkdownText(text: plan, style: .callout).frame(maxWidth: .infinity, alignment: .leading) }
                         .frame(maxHeight: 280)
+                        .fixedSize(horizontal: false, vertical: true)
                         .scrollBounceBehavior(.basedOnSize)
                 }
                 HStack {
