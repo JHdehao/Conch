@@ -1,0 +1,14 @@
+# Build output
+build/
+DerivedData/
+
+# Xcode per-user state
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# macOS
+.DS_Store
+
+# libtailscale's own upstream history (the checkout is kept as plain files; see vendor/libtailscale/UPSTREAM)
+vendor/.libtailscale-upstream.git/

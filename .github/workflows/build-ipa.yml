@@ -1,0 +1,71 @@
+name: Build unsigned IPA (Release)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'Conch/**'
+      - 'ConchWidgets/**'
+      - 'Shared/**'
+      - 'Conch.xcodeproj/**'
+      - 'Frameworks/**'
+      - '.github/workflows/build-ipa.yml'
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain info
+        run: |
+          sw_vers
+          xcodebuild -version
+
+      - name: Build (无签名)
+        run: |
+          set -o pipefail
+          # 每个包可辨认：build 号 = CI 运行序号，版本号 0.1.<序号>（SideStore 按版本号判断有无更新），
+          # 提交号写进 Info.plist（设置页底部显示）
+          xcodebuild -project Conch.xcodeproj -scheme Conch -configuration Release \
+            MARKETING_VERSION=0.1.${{ github.run_number }} CURRENT_PROJECT_VERSION=${{ github.run_number }} \
+            CONCH_COMMIT=${GITHUB_SHA::7} \
+            -derivedDataPath build/dd \
+            -destination 'generic/platform=iOS' \
+            -skipPackageUpdates -skipPackagePluginValidation -skipMacroValidation \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            build 2>&1 | tee "$RUNNER_TEMP/conch-build.log" | tail -40
+
+      - name: 编译报错
+        if: failure()
+        run: |
+          grep -E ": error:|BUILD FAILED" "$RUNNER_TEMP/conch-build.log" | sed -E 's#^.*/Conch/Conch/##' | sort -u | head -40
+
+      - name: 打包 IPA
+        run: |
+          set -euo pipefail
+          APP=build/dd/Build/Products/Release-iphoneos/Conch.app
+          test -d "$APP"
+          # 实时活动 / 灵动岛的扩展必须在包里
+          test -d "$APP/PlugIns/ConchWidgets.appex"
+          rm -rf out && mkdir -p out/Payload
+          cp -R "$APP" out/Payload/
+          cd out && zip -qry Conch-unsigned.ipa Payload
+          ls -lh Conch-unsigned.ipa
+          shasum -a 256 Conch-unsigned.ipa | cut -c1-16
+          # 崩溃符号化用
+          (cd ../build/dd/Build/Products/Release-iphoneos && zip -qry ../../../../../out/Conch-dSYM.zip Conch.app.dSYM) || echo "没有 dSYM，跳过"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Conch-unsigned-ipa
+          path: out/Conch-unsigned.ipa
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Conch-dSYM
+          path: out/Conch-dSYM.zip
+          retention-days: 90

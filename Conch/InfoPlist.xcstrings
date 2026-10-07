@@ -1,0 +1,198 @@
+{
+  "sourceLanguage": "zh-Hans",
+  "strings": {
+    "NSCalendarsFullAccessUsageDescription": {
+      "comment": "Privacy - usage description",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The AI assistant reads and adds calendar events when you ask."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI 助手需要读取和添加日历日程。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI 助理需要讀取和新增行事曆事件。"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription": {
+      "comment": "Privacy - usage description",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take photos to attach for the AI; the AI assistant also uses the flash as a flashlight."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拍照作为附件发给 AI；AI 助手也会用闪光灯当手电筒。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拍照作為附件傳給 AI；AI 助理也會用閃光燈當手電筒。"
+          }
+        }
+      }
+    },
+    "NSContactsUsageDescription": {
+      "comment": "Privacy - usage description",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The AI assistant searches your contacts when you ask."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI 助手需要在你要求时搜索通讯录。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI 助理需要在你要求時搜尋聯絡人。"
+          }
+        }
+      }
+    },
+    "NSLocalNetworkUsageDescription": {
+      "comment": "Privacy - usage description",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conch needs local network access to connect to servers on your LAN."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conch 需要访问本地网络，以便连接局域网内的服务器。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conch 需要存取本機網路，才能連線區域網路內的伺服器。"
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription": {
+      "comment": "Privacy - usage description",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With “Keep Connected in Background” on, Conch uses your location to keep SSH connections alive in the background and to record roughly where each connection was made (stored only on this device). The AI assistant also gets your location when you ask."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开启“后台保持连接”后，Conch 用位置让 SSH 连接在后台不中断，并记录每次连接的大致地点（只保存在本机）；AI 助手也会在你询问时获取当前位置。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開啟「背景保持連線」後，Conch 會使用位置讓 SSH 連線在背景不中斷，並記錄每次連線的大致地點（只儲存在本機）；AI 助理也會在你詢問時取得目前位置。"
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription": {
+      "comment": "Privacy - usage description",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The microphone is used for dictation."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音输入时需要使用麦克风。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "語音輸入時需要使用麥克風。"
+          }
+        }
+      }
+    },
+    "NSRemindersFullAccessUsageDescription": {
+      "comment": "Privacy - usage description",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The AI assistant reads and adds reminders when you ask."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI 助手需要读取和添加提醒事项。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI 助理需要讀取和新增提醒事項。"
+          }
+        }
+      }
+    },
+    "NSSpeechRecognitionUsageDescription": {
+      "comment": "Privacy - usage description",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turns what you say into text in the input field, on device when supported."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "把你说的话转成文字，填进输入框。支持时在本机识别。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "把你說的話轉成文字，填入輸入框。支援時在本機辨識。"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

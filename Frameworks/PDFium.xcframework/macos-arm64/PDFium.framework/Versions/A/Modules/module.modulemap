@@ -1,0 +1,16 @@
+framework module PDFium {
+    header "fpdfview.h"
+    header "fpdf_edit.h"
+    header "fpdf_text.h"
+    header "fpdf_save.h"
+    header "fpdf_doc.h"
+    header "fpdf_annot.h"
+    header "fpdf_formfill.h"
+    header "fpdf_ppo.h"
+    header "fpdf_transformpage.h"
+    header "fpdf_flatten.h"
+    header "fpdf_sysfontinfo.h"
+    header "fpdf_catalog.h"
+    header "fpdf_searchex.h"
+    export *
+}

@@ -1,0 +1,28 @@
+--- a/net/netns/netns.go	2026-09-27 22:57:01
++++ b/net/netns/netns.go	2026-09-27 22:57:01
+@@ -48,6 +48,17 @@
+ 
+ var disableBindConnToInterface atomic.Bool
+ 
++// neverBindConnToInterface is a Conch patch: an app that embeds tsnet without a
++// tunnel of its own can pin interface binding off, so the netmap's capabilities
++// (applied on every netmap) can't turn it back on.
++var neverBindConnToInterface atomic.Bool
++
++// SetNeverBindConnToInterface (Conch patch) pins SetDisableBindConnToInterface to true.
++func SetNeverBindConnToInterface(logf logger.Logf) {
++	neverBindConnToInterface.Store(true)
++	SetDisableBindConnToInterface(logf, true)
++}
++
+ // SetDisableBindConnToInterface disables the (normal) behavior of binding
+ // connections to the default network interface on Darwin nodes.
+ //
+@@ -56,6 +67,7 @@
+ // SetDisableBindConnToInterfaceAppleExt which will disable explicit interface
+ // binding only when tailscaled is running inside a network extension process.
+ func SetDisableBindConnToInterface(logf logger.Logf, v bool) {
++	v = v || neverBindConnToInterface.Load()
+ 	if disableBindConnToInterface.Swap(v) != v {
+ 		logf("netns: disableBindConnToInterface changed to %v", v)
+ 	}

@@ -1,0 +1,6 @@
+module TailscaleC {
+    header "tailscale.h"
+    header "conch_tailscale.h"
+    link "resolv"
+    export *
+}

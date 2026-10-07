@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0A000000000000000000012 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = C0A000000000000000000010 /* SwiftTerm */; };
+		C0A000000000000000000013 /* Citadel in Frameworks */ = {isa = PBXBuildFile; productRef = C0A000000000000000000011 /* Citadel */; };
+		C0A000000000000000000031 /* Tailscale.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A000000000000000000030 /* Tailscale.xcframework */; };
+		C0A000000000000000000035 /* PDFium.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A000000000000000000034 /* PDFium.xcframework */; };
+		C0A000000000000000000036 /* PDFium.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0A000000000000000000034 /* PDFium.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C0A00000000000000000004B /* ConchWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C0A000000000000000000040 /* ConchWidgets.appex */; platformFilters = (ios, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0A00000000000000000004D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0A000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0A000000000000000000043;
+			remoteInfo = ConchWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0A000000000000000000037 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C0A000000000000000000036 /* PDFium.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A00000000000000000004C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C0A00000000000000000004B /* ConchWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C0A000000000000000000005 /* Conch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A000000000000000000030 /* Tailscale.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Frameworks/Tailscale.xcframework; sourceTree = "<group>"; };
+		C0A000000000000000000034 /* PDFium.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Frameworks/PDFium.xcframework; sourceTree = "<group>"; };
+		C0A000000000000000000040 /* ConchWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConchWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C0A000000000000000000042 /* Exceptions for "ConchWidgets" folder in "ConchWidgets" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C0A000000000000000000043 /* ConchWidgets */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C0A000000000000000000003 /* Conch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Conch;
+			sourceTree = "<group>";
+		};
+		C0A000000000000000000041 /* ConchWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C0A000000000000000000042 /* Exceptions for "ConchWidgets" folder in "ConchWidgets" target */,
+			);
+			path = ConchWidgets;
+			sourceTree = "<group>";
+		};
+		C0A000000000000000000044 /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0A000000000000000000008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A000000000000000000012 /* SwiftTerm in Frameworks */,
+				C0A000000000000000000013 /* Citadel in Frameworks */,
+				C0A000000000000000000031 /* Tailscale.xcframework in Frameworks */,
+				C0A000000000000000000035 /* PDFium.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A000000000000000000047 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0A000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				C0A000000000000000000003 /* Conch */,
+				C0A000000000000000000041 /* ConchWidgets */,
+				C0A000000000000000000044 /* Shared */,
+				C0A000000000000000000030 /* Tailscale.xcframework */,
+				C0A000000000000000000034 /* PDFium.xcframework */,
+				C0A000000000000000000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0A000000000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0A000000000000000000005 /* Conch.app */,
+				C0A000000000000000000040 /* ConchWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0A000000000000000000006 /* Conch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A000000000000000000019 /* Build configuration list for PBXNativeTarget "Conch" */;
+			buildPhases = (
+				C0A000000000000000000007 /* Sources */,
+				C0A000000000000000000008 /* Frameworks */,
+				C0A000000000000000000009 /* Resources */,
+				C0A000000000000000000037 /* Embed Frameworks */,
+				C0A00000000000000000004C /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0A00000000000000000004E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C0A000000000000000000003 /* Conch */,
+				C0A000000000000000000044 /* Shared */,
+			);
+			name = Conch;
+			packageProductDependencies = (
+				C0A000000000000000000010 /* SwiftTerm */,
+				C0A000000000000000000011 /* Citadel */,
+			);
+			productName = Conch;
+			productReference = C0A000000000000000000005 /* Conch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C0A000000000000000000043 /* ConchWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A000000000000000000045 /* Build configuration list for PBXNativeTarget "ConchWidgets" */;
+			buildPhases = (
+				C0A000000000000000000046 /* Sources */,
+				C0A000000000000000000047 /* Frameworks */,
+				C0A000000000000000000048 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C0A000000000000000000041 /* ConchWidgets */,
+				C0A000000000000000000044 /* Shared */,
+			);
+			name = ConchWidgets;
+			productName = ConchWidgets;
+			productReference = C0A000000000000000000040 /* ConchWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0A000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					C0A000000000000000000006 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					C0A000000000000000000043 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = C0A000000000000000000016 /* Build configuration list for PBXProject "Conch" */;
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				"zh-Hans",
+				en,
+				Base,
+				"zh-Hant",
+			);
+			mainGroup = C0A000000000000000000002;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C0A000000000000000000014 /* XCRemoteSwiftPackageReference "SwiftTerm" */,
+				C0A000000000000000000015 /* XCRemoteSwiftPackageReference "Citadel" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C0A000000000000000000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0A000000000000000000006 /* Conch */,
+				C0A000000000000000000043 /* ConchWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0A000000000000000000009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A000000000000000000048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0A000000000000000000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A000000000000000000046 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0A00000000000000000004E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+			);
+			target = C0A000000000000000000043 /* ConchWidgets */;
+			targetProxy = C0A00000000000000000004D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C0A000000000000000000017 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0A000000000000000000018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C0A00000000000000000001A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CK5DY89VN5;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = YES;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = YES;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = YES;
+				ENABLE_RESOURCE_ACCESS_LOCATION = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Conch;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Conch 需要访问本地网络，以便连接局域网内的服务器。";
+				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "AI 助手需要读取和添加日历日程。";
+				INFOPLIST_KEY_NSRemindersFullAccessUsageDescription = "AI 助手需要读取和添加提醒事项。";
+				INFOPLIST_KEY_NSContactsUsageDescription = "AI 助手需要在你要求时搜索通讯录。";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "开启“后台保持连接”后，Conch 用位置让 SSH 连接在后台不中断，并记录每次连接的大致地点（只保存在本机）；AI 助手也会在你询问时获取当前位置。";
+				"INFOPLIST_FILE[sdk=iphoneos*]" = "Conch-Info.plist";
+				"INFOPLIST_FILE[sdk=iphonesimulator*]" = "Conch-Info.plist";
+				"INFOPLIST_FILE[sdk=macosx*]" = "Conch-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "拍照作为附件发给 AI；AI 助手也会用闪光灯当手电筒。";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "语音输入时需要使用麦克风。";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "把你说的话转成文字，填进输入框。支持时在本机识别。";
+				"INFOPLIST_KEY_NSSupportsLiveActivities[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_NSSupportsLiveActivities[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
+				OTHER_LDFLAGS = (
+					"-lresolv",
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tj.conch.CK5DY89VN5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0A00000000000000000001B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CK5DY89VN5;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = YES;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = YES;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = YES;
+				ENABLE_RESOURCE_ACCESS_LOCATION = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Conch;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Conch 需要访问本地网络，以便连接局域网内的服务器。";
+				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "AI 助手需要读取和添加日历日程。";
+				INFOPLIST_KEY_NSRemindersFullAccessUsageDescription = "AI 助手需要读取和添加提醒事项。";
+				INFOPLIST_KEY_NSContactsUsageDescription = "AI 助手需要在你要求时搜索通讯录。";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "开启“后台保持连接”后，Conch 用位置让 SSH 连接在后台不中断，并记录每次连接的大致地点（只保存在本机）；AI 助手也会在你询问时获取当前位置。";
+				"INFOPLIST_FILE[sdk=iphoneos*]" = "Conch-Info.plist";
+				"INFOPLIST_FILE[sdk=iphonesimulator*]" = "Conch-Info.plist";
+				"INFOPLIST_FILE[sdk=macosx*]" = "Conch-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "拍照作为附件发给 AI；AI 助手也会用闪光灯当手电筒。";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "语音输入时需要使用麦克风。";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "把你说的话转成文字，填进输入框。支持时在本机识别。";
+				"INFOPLIST_KEY_NSSupportsLiveActivities[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_NSSupportsLiveActivities[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
+				OTHER_LDFLAGS = (
+					"-lresolv",
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tj.conch.CK5DY89VN5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C0A000000000000000000049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CK5DY89VN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Conch;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tj.conch.CK5DY89VN5.Widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0A00000000000000000004A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CK5DY89VN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Conch;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tj.conch.CK5DY89VN5.Widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0A000000000000000000016 /* Build configuration list for PBXProject "Conch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A000000000000000000017 /* Debug */,
+				C0A000000000000000000018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A000000000000000000019 /* Build configuration list for PBXNativeTarget "Conch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A00000000000000000001A /* Debug */,
+				C0A00000000000000000001B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A000000000000000000045 /* Build configuration list for PBXNativeTarget "ConchWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A000000000000000000049 /* Debug */,
+				C0A00000000000000000004A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0A000000000000000000014 /* XCRemoteSwiftPackageReference "SwiftTerm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/migueldeicaza/SwiftTerm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.20.0;
+			};
+		};
+		C0A000000000000000000015 /* XCRemoteSwiftPackageReference "Citadel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/orlandos-nl/Citadel";
+			requirement = {
+				kind = exactVersion;
+				version = 0.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0A000000000000000000010 /* SwiftTerm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0A000000000000000000014 /* XCRemoteSwiftPackageReference "SwiftTerm" */;
+			productName = SwiftTerm;
+		};
+		C0A000000000000000000011 /* Citadel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0A000000000000000000015 /* XCRemoteSwiftPackageReference "Citadel" */;
+			productName = Citadel;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C0A000000000000000000001 /* Project object */;
+}
