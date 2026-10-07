@@ -63,6 +63,9 @@ struct ContentView: View {
             #if os(iOS)
             BackgroundKeeper.shared.register { [workspace] in workspace.allSessions.contains { $0.state.isActive } }
             #endif
+            #if DEBUG
+            if DemoMode.isOn { openDemo() }
+            #endif
         }
         .sheet(item: $editor) { item in
             HostEditor(host: item.host)
@@ -319,6 +322,27 @@ struct ContentView: View {
         workspace.openBrowser(url)
         #endif
     }
+
+    #if DEBUG
+    /// Screenshot demo: made-up computers and conversations, then the requested screen.
+    private func openDemo() {
+        let focus = DemoMode.seed(in: modelContext)
+        #if os(iOS)
+        switch DemoMode.screen {
+        case .home:
+            break
+        case .settings:
+            showingSettings = true
+        case .agents, .chat, .approval, .question, .plan, .codex:
+            AgentHub.shared.focusOnOpen = focus?.id
+            showingAgents = true
+        }
+        #else
+        if let focus { AgentHub.shared.focusOnOpen = focus.id }
+        if DemoMode.screen != .home && DemoMode.screen != .settings { openWindow(id: AgentHubView.windowID) }
+        #endif
+    }
+    #endif
 
     /// Opens the Claude Code / Codex area, optionally preselecting a computer.
     private func openAgents(_ host: Host?) {

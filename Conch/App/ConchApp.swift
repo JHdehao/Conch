@@ -6,6 +6,11 @@ struct ConchApp: App {
     /// One store shared by every window.
     static let container: ModelContainer = {
         do {
+            #if DEBUG
+            if DemoMode.isOn {
+                return try ModelContainer(for: Host.self, SSHKey.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+            }
+            #endif
             return try ModelContainer(for: Host.self, SSHKey.self)
         } catch {
             fatalError(String(localized: "无法打开数据库：\(error)"))

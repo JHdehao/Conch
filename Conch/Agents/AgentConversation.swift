@@ -790,3 +790,25 @@ final class AgentConversation: Identifiable {
         UserDefaults.standard.set(mode.rawValue, forKey: "agent.mode.\(kind.rawValue)")
     }
 }
+
+#if DEBUG
+extension AgentConversation {
+    /// Demo mode: shows recorded agent output as if it had just arrived, without connecting.
+    /// `history` is a session log, `live` lines the running turn sent since.
+    func showDemo(history: [String], live: [String], model: String, context: AgentContextUsage, running: Bool) {
+        switch kind {
+        case .claude:
+            var log = ClaudeStreamParser(includeUserText: true)
+            for line in history { log.consume(line).forEach { apply($0) } }
+            var stream = ClaudeStreamParser()
+            for line in live { stream.consume(line).forEach { apply($0) } }
+        case .codex:
+            items = CodexRollout.history(history.map { Substring($0) })
+        }
+        self.model = model
+        contextUsage = context
+        isRunning = running
+        lastActivity = .now
+    }
+}
+#endif

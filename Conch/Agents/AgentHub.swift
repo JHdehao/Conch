@@ -294,3 +294,26 @@ final class AgentHub {
         UserDefaults.standard.set(Array(list.prefix(12)), forKey: "agent.projects.\(host.id.uuidString)")
     }
 }
+
+#if DEBUG
+extension AgentHub {
+    /// Demo mode: conversations made without a connection of the hub's.
+    func addDemo(_ demo: [AgentConversation]) {
+        conversations += demo
+    }
+
+    /// Demo mode: past sessions per computer, as if just listed.
+    func seedDemoSessions(_ sessions: [UUID: [AgentSessionSummary]]) {
+        for (hostID, list) in sessions {
+            for kind in AgentKind.allCases {
+                sessionCache[Self.cacheKey(hostID, kind)] = list.filter { $0.kind == kind }
+            }
+        }
+    }
+
+    /// Demo mode: the made-up computers have no commands to fetch.
+    func skipDemoCommands(hostID: UUID, kind: AgentKind) {
+        loadingCommands.insert("\(hostID.uuidString)-\(kind.rawValue)")
+    }
+}
+#endif

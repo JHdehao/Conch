@@ -1,0 +1,88 @@
+name: Screenshots (demo mode)
+
+# 手动触发：Debug 模拟器版用 -ConchDemo 启动（内存数据库 + 虚构的电脑和对话，不连任何地方），
+# 按 语言 × 深浅色 × 页面 截图，产物 Conch-screenshots。
+on:
+  workflow_dispatch:
+    inputs:
+      device:
+        description: 模拟器机型
+        default: iPhone 17 Pro
+
+jobs:
+  screenshots:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build (Debug, simulator)
+        run: |
+          set -o pipefail
+          xcodebuild -project Conch.xcodeproj -scheme Conch -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' ARCHS=arm64 ONLY_ACTIVE_ARCH=NO \
+            -derivedDataPath build/dd \
+            -skipPackageUpdates -skipPackagePluginValidation -skipMacroValidation \
+            CODE_SIGNING_ALLOWED=NO \
+            build 2>&1 | tee "$RUNNER_TEMP/build.log" | tail -30
+
+      - name: 编译报错
+        if: failure()
+        run: |
+          grep -E ": error:|BUILD FAILED" "$RUNNER_TEMP/build.log" | sed -E 's#^.*/Conch/Conch/##' | sort -u | head -40
+          # 第三方包的自定义任务失败时没有 error: 行，把它的输出段落打出来
+          grep -n -A 40 -E "^CustomTask|^PhaseScriptExecution" "$RUNNER_TEMP/build.log" | grep -v -E "^[0-9]+-\s+(cd|export) " | head -120
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: build-log
+          path: ${{ runner.temp }}/build.log
+
+      - name: Boot simulator
+        id: sim
+        env:
+          DEVICE: ${{ inputs.device || 'iPhone 17 Pro' }}
+        run: |
+          set -euo pipefail
+          UDID=$(xcrun simctl list devices available -j | python3 -c '
+          import json, os, sys
+          want = os.environ["DEVICE"]
+          devices = [d for runtime, ds in json.load(sys.stdin)["devices"].items() if "iOS" in runtime for d in ds]
+          match = [d for d in devices if d["name"] == want] or [d for d in devices if d["name"].startswith("iPhone")]
+          print(match[-1]["udid"])')
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl status_bar "$UDID" override --time 9:41 --dataNetwork wifi --wifiMode active --wifiBars 3 \
+            --cellularMode active --cellularBars 4 --batteryState charged --batteryLevel 100
+          xcrun simctl install "$UDID" build/dd/Build/Products/Debug-iphonesimulator/Conch.app
+
+      - name: Capture
+        env:
+          UDID: ${{ steps.sim.outputs.udid }}
+        run: |
+          set -euo pipefail
+          APP=build/dd/Build/Products/Debug-iphonesimulator/Conch.app
+          BUNDLE=$(/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' "$APP/Info.plist")
+          for lang in zh-Hans en; do
+            locale=$([ "$lang" = en ] && echo en_US || echo zh_CN)
+            for look in light dark; do
+              xcrun simctl ui "$UDID" appearance "$look"
+              mkdir -p "shots/$lang/$look"
+              for screen in home agents chat approval question plan codex settings; do
+                xcrun simctl terminate "$UDID" "$BUNDLE" 2>/dev/null || true
+                xcrun simctl launch "$UDID" "$BUNDLE" -ConchDemo YES -ConchDemoScreen "$screen" \
+                  -AppleLanguages "($lang)" -AppleLocale "$locale" >/dev/null
+                sleep 6
+                xcrun simctl io "$UDID" screenshot "shots/$lang/$look/$screen.png" >/dev/null
+                echo "$lang/$look/$screen"
+              done
+            done
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Conch-screenshots
+          path: shots
+          retention-days: 30

@@ -8,6 +8,15 @@ Conch is a native SwiftUI SSH / Mosh client for iOS and macOS, built for the age
 
 > Status: early beta. Built and used daily by one developer; expect rough edges.
 
+<p align="center">
+  <img src="docs/screenshots/en-chat.png" width="200" alt="chat">
+  <img src="docs/screenshots/en-approval.png" width="200" alt="approval">
+  <img src="docs/screenshots/en-plan.png" width="200" alt="plan">
+  <img src="docs/screenshots/en-agents.png" width="200" alt="agents">
+</p>
+
+<sub>Screenshots come from the built-in demo mode (made-up machines and projects); regenerate them with the <code>Screenshots</code> workflow.</sub>
+
 ## Why Conch
 
 - **Works with any backend.** Official remote-control features require a Claude or ChatGPT subscription login. Conch talks to the CLI over SSH, so Claude Code pointed at an API key or a third-party model works just as well.
@@ -40,6 +49,8 @@ Free Apple IDs re-sign every 7 days; Live Activities work, remote push does not.
 
 Requires Xcode 26 and iOS 18 / macOS 15.
 
+Debug builds have a screenshot demo mode: launch with `-ConchDemo YES -ConchDemoScreen chat` (also `home`, `agents`, `approval`, `question`, `plan`, `codex`, `settings`). It uses an in-memory database with made-up data and never connects anywhere.
+
 ```sh
 open Conch.xcodeproj   # pick your own team in Signing & Capabilities
 ```
@@ -63,6 +74,13 @@ Issues and PRs are welcome. By submitting a contribution you agree that it may b
 **在 iPhone 上驾驶 Claude Code 和 Codex：直连 SSH，不经中继，不要官方账号，服务器上什么都不用装。**
 
 Conch 是用 SwiftUI 写的原生 SSH / Mosh 客户端（iOS + macOS），专为 AI 编程时代设计：在你自己的电脑上运行 `claude` / `codex` 命令行，在手机上给它们一个好用的对话界面——审批卡片、计划确认、锁屏和灵动岛实时进度、运行中随时插话。
+
+<p align="center">
+  <img src="docs/screenshots/zh-Hans-chat.png" width="200" alt="chat">
+  <img src="docs/screenshots/zh-Hans-approval.png" width="200" alt="approval">
+  <img src="docs/screenshots/zh-Hans-plan.png" width="200" alt="plan">
+  <img src="docs/screenshots/zh-Hans-agents.png" width="200" alt="agents">
+</p>
 
 - **什么后端都能驱动**：官方远程控制要登录 Claude / ChatGPT 订阅账号；Conch 走 SSH，Claude Code 接 API Key、接 GLM / Kimi / DeepSeek 都照样能用。
 - **不经第三方中继**：端到端就是你自己的 SSH 连接。
